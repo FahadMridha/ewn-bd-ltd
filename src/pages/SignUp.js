@@ -83,7 +83,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
           </div>
           <div className="form-control w-full max-w-xs">
             <input
-              placeholder="Your  Email"
+              placeholder="Your  email"
               type="email"
               {...register("email", {
                 required: "Email is required",
@@ -96,7 +96,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
           </div>
           <div className="form-control w-full max-w-xs">
             <input
-              placeholder="Password"
+              placeholder="password"
               type="password"
               {...register("password", {
                 required: "Password is required",
@@ -104,7 +104,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
 
                 pattern: {
                   value: /[A-Z]/,
-                  message: "password must be a capital letter",
+                  message: "Password must be a capital letter",
                 },
               })}
               className="rounded border-2 p-2 w-full mt-2"

@@ -34,18 +34,31 @@ const Login = ({ isLogin, setIsLogin }) => {
 
   const resetPassword = () => {
     toast((t) => (
-      <form onSubmit={handlerPasswordReset}>
-        <input
-          placeholder="Enter email"
-          type="email"
-          name="email"
-          className="rounded border-2 p-2 w-full mt-2 "
-        />
-        <button className="bg-gray-400" onClick={() => toast.dismiss(t.id)}>
-          Dismiss
-        </button>
-        <button className="bg-gray-400">submit</button>
-      </form>
+      <div>
+        <div className="flex justify-end">
+          <button
+            className="bg-orange-200 hover:bg-orange-200 w-8 h-8 rounded-full "
+            onClick={() => toast.dismiss(t.id)}
+          >
+            X
+          </button>
+        </div>
+        <form onSubmit={handlerPasswordReset}>
+          <p className="text-center font-semibold text-2xl">
+            Password Recovery
+          </p>
+          <input
+            placeholder="Enter email"
+            type="email"
+            name="email"
+            className="rounded border-2 p-2 w-full my-3 "
+          />
+
+          <button className="bg-blue-700  hover:bg-blue-800 text-white py-2 px-3 rounded-lg">
+            Submit
+          </button>
+        </form>
+      </div>
     ));
   };
 
@@ -95,7 +108,6 @@ const Login = ({ isLogin, setIsLogin }) => {
                 {...register("email", {
                   required: "Email Address is required",
                 })}
-                // onBlur={handlerEmailBlur}
                 placeholder="Enter Email"
                 type="email"
                 className="rounded border-2 p-2 w-full mt-2 "
@@ -165,7 +177,7 @@ const Login = ({ isLogin, setIsLogin }) => {
           <div>
             {loginError && (
               <p className="text-red-600">
-                {loginError} Please enter your valid email and password
+                Please enter your valid email and password
               </p>
             )}
           </div>
