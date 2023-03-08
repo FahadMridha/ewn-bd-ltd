@@ -9,6 +9,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -39,6 +40,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
           .then(() => {})
           .catch((error) => console.log(error));
         // console.log(user);
+        reset();
       })
       .catch((error) => {
         setSignupError(error.message);
@@ -119,7 +121,7 @@ const SignUp = ({ isLogin, setIsLogin }) => {
             type="submit"
           />
         </form>
-        {signupError && <p className="text-red-600">{signupError}</p>}
+        {signupError && <p className="text-red-600">Email Already in Use</p>}
       </div>
     </div>
   );

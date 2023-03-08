@@ -8,6 +8,7 @@ const Login = ({ isLogin, setIsLogin }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -25,6 +26,7 @@ const Login = ({ isLogin, setIsLogin }) => {
       .then((result) => {
         toast.success("User Successfully Login!");
         // console.log(result);
+        reset();
       })
       .catch((error) => {
         console.log(error.massage);
